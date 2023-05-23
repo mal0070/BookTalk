@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class LoginViewController: UIViewController {
+final class LoginViewController: UIViewController {
     
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
@@ -42,15 +42,29 @@ class LoginViewController: UIViewController {
         let button = CustomButton(text: "Apple로 계속하기", bgColor: .black, titleColor: .white, imageName: "apple.logo")
         return button
     }()
-
+    
     
     private lazy var loginLabel : UILabel = {
+        let clickLabel = UITapGestureRecognizer(target: self, action: #selector(goToTab))
         let label = UILabel()
         label.text = "로그인"
         label.textColor = .black
         label.font = UIFont(name: "Pretendard-Light", size: 19.0)
+        label.addGestureRecognizer(clickLabel)
+        label.isUserInteractionEnabled = true
         return label
     }()
+    
+    @objc func goToTab(sender: UITapGestureRecognizer){
+        let tab = TabBarController()
+        tab.modalPresentationStyle = .fullScreen
+        tab.modalTransitionStyle = .coverVertical
+        
+        present(tab, animated: true)
+        if presentedViewController == tab {
+            presentingViewController?.dismiss(animated: true)
+        }
+    }
     
 
     override func viewDidLoad() {

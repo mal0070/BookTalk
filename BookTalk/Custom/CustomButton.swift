@@ -43,7 +43,6 @@ class CustomButton: UIButton {
         self.configuration?.imagePlacement = .leading
         self.configuration?.imagePadding = 57
         self.configuration?.contentInsets = NSDirectionalEdgeInsets(top: 17, leading: 30, bottom: 18, trailing: 105)
-        self.configuration?.image?.withTintColor(titleColor)
         
         
         self.layer.cornerRadius = 22.0
