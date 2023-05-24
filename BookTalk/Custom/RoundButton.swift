@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 
-class CustomButton: UIButton {
+class RoundButton: UIButton {
 
     // MARK: - Init
     override init(frame: CGRect) {

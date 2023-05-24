@@ -33,13 +33,13 @@ final class LoginViewController: UIViewController {
         return button
     }()
     
-    private lazy var kakakoLoginButton: CustomButton = {
-        let button = CustomButton(text: "카카오로 계속하기", bgColor: .systemYellow, titleColor: .black, imageName: "message.fill")
+    private lazy var kakakoLoginButton: RoundButton = {
+        let button = RoundButton(text: "카카오로 계속하기", bgColor: .systemYellow, titleColor: .black, imageName: "message.fill")
         return button
     }()
     
-    private lazy var appleLoginButton: CustomButton = {
-        let button = CustomButton(text: "Apple로 계속하기", bgColor: .black, titleColor: .white, imageName: "apple.logo")
+    private lazy var appleLoginButton: RoundButton = {
+        let button = RoundButton(text: "Apple로 계속하기", bgColor: .black, titleColor: .white, imageName: "apple.logo")
         return button
     }()
     

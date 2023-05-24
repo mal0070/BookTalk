@@ -69,7 +69,7 @@ private extension DebateViewController {
         let searchButton = UIBarButtonItem(title: nil, image: UIImage(systemName: "magnifyingglass"), target: self, action: #selector(search))
         searchButton.tintColor = .black
         
-        navigationItem.rightBarButtonItems = [ profileButton, searchButton]
+        navigationItem.rightBarButtonItems = [profileButton, searchButton]
         
     }
     

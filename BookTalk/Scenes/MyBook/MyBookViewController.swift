@@ -59,9 +59,9 @@ extension MyBookViewController: UICollectionViewDelegateFlowLayout {
     
     //cell 선택했을 때
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        //let post = postList[indexPath.item]
-        //let vc = PostViewController() //(post: post) 인자로 넘겨주기
-        //present(vc, animated:true)
+        //let bookDetail = postList[indexPath.item]
+        let vc = BookDetailViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
 
