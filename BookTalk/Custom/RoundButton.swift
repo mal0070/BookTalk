@@ -44,7 +44,6 @@ class RoundButton: UIButton {
         self.configuration?.imagePadding = 57
         self.configuration?.contentInsets = NSDirectionalEdgeInsets(top: 17, leading: 30, bottom: 18, trailing: 105)
         
-        
         self.layer.cornerRadius = 22.0
         self.layer.masksToBounds = true
         self.isUserInteractionEnabled = true

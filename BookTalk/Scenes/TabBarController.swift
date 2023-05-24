@@ -27,6 +27,14 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         viewControllers = [myBookViewController, debateViewController]
+        
+        tabBar.isTranslucent = false //불투명
+        tabBar.barTintColor = UIColor(named: "bt-button")
+        tabBar.tintColor = .black
+        tabBar.layer.cornerRadius = tabBar.frame.height * 0.41
+        tabBar.layer.masksToBounds = true
+        tabBar.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]   //위쪽 모서리만 둥글게
+        
     }
     
 }

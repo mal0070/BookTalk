@@ -40,6 +40,7 @@ final class DebateViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = UIColor(named: "bt-bgcolor")
         setupNavigationBar()
         setupLayout()
         

@@ -19,22 +19,22 @@ final class BookDetailViewController: UIViewController {
     
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
-        label.text = "책 제목"
+        label.text = "데미안"
         label.font = UIFont(name: "Pretendard-Bold", size: 25)
         return label
     }()
     
     private lazy var authorLabel: UILabel = {
         let label = UILabel()
-        label.text = "작가명"
+        label.text = "헤르만 헤세"
         label.font = UIFont(name: "Pretendard-Medium", size: 20)
         return label
     }()
     
     private lazy var companyLabel: UILabel = {
         let label = UILabel()
-        label.text = "데미안"
-        label.font = UIFont(name: "Pretendard-Bold", size: 20)
+        label.text = "민음사"
+        label.font = UIFont(name: "Pretendard-Medium", size: 20)
         return label
     }()
    
@@ -53,11 +53,15 @@ final class BookDetailViewController: UIViewController {
     }()
     
     private lazy var writeButton: UIButton = {
-        let button = UIButton()
+        let button = UIButton(type: .custom, primaryAction: UIAction(handler: { _ in
+            let vc = BookWriteViewController()
+            self.navigationController?.pushViewController(vc, animated: true)
+        }))
         button.setTitle("기록하기", for: .normal)
         button.tintColor = .black
         button.backgroundColor = .lightGray
         button.layer.cornerRadius = 22
+       
         return button
     }()
 
@@ -66,6 +70,7 @@ final class BookDetailViewController: UIViewController {
         super.viewDidLoad()
         setupLayout()
         imageView.image = UIImage(named: "데미안")
+        view.backgroundColor = UIColor(named: "bt-bgcolor")
     }
 
 }
@@ -89,7 +94,7 @@ extension BookDetailViewController {
             $0.leading.equalTo(titleLabel)
         }
         companyLabel.snp.makeConstraints{
-            $0.top.equalTo(titleLabel.snp.bottom).offset(10)
+            $0.top.equalTo(authorLabel.snp.bottom).offset(10)
             $0.leading.equalTo(titleLabel)
         }
         topLabel.snp.makeConstraints{

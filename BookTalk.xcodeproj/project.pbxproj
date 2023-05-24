@@ -27,6 +27,7 @@
 		2F82FC642A1D0D0900480FB3 /* SquareButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F82FC632A1D0D0900480FB3 /* SquareButton.swift */; };
 		2F82FC662A1D0FA200480FB3 /* AddBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F82FC652A1D0FA200480FB3 /* AddBookViewController.swift */; };
 		2F82FC692A1DB99D00480FB3 /* 데미안.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 2F82FC682A1DB99D00480FB3 /* 데미안.jpeg */; };
+		2F82FC6B2A1DBD5000480FB3 /* BookWriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F82FC6A2A1DBD5000480FB3 /* BookWriteViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +52,7 @@
 		2F82FC632A1D0D0900480FB3 /* SquareButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquareButton.swift; sourceTree = "<group>"; };
 		2F82FC652A1D0FA200480FB3 /* AddBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBookViewController.swift; sourceTree = "<group>"; };
 		2F82FC682A1DB99D00480FB3 /* 데미안.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "데미안.jpeg"; sourceTree = "<group>"; };
+		2F82FC6A2A1DBD5000480FB3 /* BookWriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookWriteViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,9 +143,10 @@
 			isa = PBXGroup;
 			children = (
 				2F0552FA2A1B71110081A4F2 /* MyBookViewController.swift */,
+				2F82FC562A1C96D200480FB3 /* BookCollectionViewCell.swift */,
 				2F82FC652A1D0FA200480FB3 /* AddBookViewController.swift */,
 				2F82FC612A1D06F700480FB3 /* BookDetailViewController.swift */,
-				2F82FC562A1C96D200480FB3 /* BookCollectionViewCell.swift */,
+				2F82FC6A2A1DBD5000480FB3 /* BookWriteViewController.swift */,
 			);
 			path = MyBook;
 			sourceTree = "<group>";
@@ -243,6 +246,7 @@
 				2F82FC572A1C96D200480FB3 /* BookCollectionViewCell.swift in Sources */,
 				2F0552FB2A1B71110081A4F2 /* MyBookViewController.swift in Sources */,
 				2F82FC642A1D0D0900480FB3 /* SquareButton.swift in Sources */,
+				2F82FC6B2A1DBD5000480FB3 /* BookWriteViewController.swift in Sources */,
 				2F82FC622A1D06F700480FB3 /* BookDetailViewController.swift in Sources */,
 				2F0552F92A1B70FC0081A4F2 /* DebateViewController.swift in Sources */,
 				2F0552F52A1A4BDE0081A4F2 /* RoundButton.swift in Sources */,

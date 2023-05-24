@@ -70,6 +70,7 @@ final class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupLayout()
+        view.backgroundColor = UIColor(named: "bt-bgcolor")
     }
 
 }

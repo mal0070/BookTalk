@@ -26,11 +26,11 @@ class SquareButton: UIButton {
         self.widthAnchor.constraint(equalToConstant: 350).isActive = true
         self.heightAnchor.constraint(equalToConstant: 50).isActive = true
         
-        self.titleLabel?.font = UIFont(name: "Pretendard-Bold", size: 18.0)
+        self.titleLabel?.font = UIFont(name: "Pretendard-Medium", size: 18.0)
         self.layer.cornerRadius = 3.0
         
         self.setTitle(title, for: .normal)
-        self.backgroundColor = .gray
-        self.setTitleColor(.black, for: .normal)
+        self.backgroundColor = UIColor(named: "bt-black")
+        self.setTitleColor(.white, for: .normal)
     }
 }

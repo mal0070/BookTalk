@@ -20,7 +20,34 @@ final class MyBookViewController: UIViewController {
         collectionView.dataSource = self
         
         collectionView.register(BookCollectionViewCell.self, forCellWithReuseIdentifier: "BookCollectionViewCell")
+        collectionView.backgroundColor = UIColor(named: "bt-bgcolor")
         return collectionView
+    }()
+    
+    private var config = UIButton.Configuration.filled()
+    
+    private lazy var addBookButton: UIButton = {
+        let button = UIButton(type: .custom, primaryAction: UIAction(handler: { _ in
+            let vc = AddBookViewController()
+            self.navigationController?.pushViewController(vc, animated: true)
+            self.tabBarController?.tabBar.isHidden = true //back button 누르면 다시 생기게 해야함
+        }))
+        button.configuration = config
+        button.configuration?.image = UIImage(systemName: "plus")
+        button.configuration?.baseForegroundColor = .black
+        button.configuration?.imagePlacement = .leading
+        button.configuration?.imagePadding = 12
+        button.configuration?.background.cornerRadius = 35
+        button.configuration?.baseBackgroundColor = UIColor(named: "bt-button")
+        
+        button.setTitle("도서추가", for: .normal)
+
+        
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.heightAnchor.constraint(equalToConstant: 54).isActive = true
+        button.widthAnchor.constraint(equalToConstant: 120).isActive = true
+       
+        return button
     }()
 
     override func viewDidLoad() {
@@ -31,6 +58,14 @@ final class MyBookViewController: UIViewController {
             $0.edges.equalToSuperview().inset(20)
         }
         //fetchData()
+        
+        view.addSubview(addBookButton)
+        addBookButton.snp.makeConstraints{
+            $0.centerX.equalTo(view.safeAreaLayoutGuide.snp.centerX)
+            $0.bottom.equalTo(view.safeAreaLayoutGuide).inset(20)
+        }
+        
+        view.backgroundColor = UIColor(named: "bt-bgcolor")
     }
 
 }
@@ -61,7 +96,10 @@ extension MyBookViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         //let bookDetail = postList[indexPath.item]
         let vc = BookDetailViewController()
-        self.navigationController?.pushViewController(vc, animated: true)
+        vc.modalPresentationStyle = .fullScreen
+        vc.modalTransitionStyle = .crossDissolve
+        
+        self.present(vc, animated: true)
     }
 }
 
