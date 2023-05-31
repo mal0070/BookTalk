@@ -1,13 +1,16 @@
 //
-//  AddBookViewController.swift
+//  SearchBookViewController.swift
 //  BookTalk
 //
-//  Created by 이민아 on 2023/05/24.
+//  Created by 이민아 on 2023/05/30.
 //
-
 import UIKit
+import SnapKit
 
-final class AddBookViewController: UIViewController {
+final class SearchBookViewController: UIViewController {
+    
+    var autoCompleteData = ["데미안", "어린왕자", "1984", "동물농장"]
+    var autoCompleteResults: [String] = []
     
     private lazy var label: UILabel = {
         let label = UILabel()
@@ -18,14 +21,24 @@ final class AddBookViewController: UIViewController {
         return label
     }()
     
+    //inputAccessoryView에 대입할 View 정의
+    private lazy var accessoryView: UIView = {
+        return UIView(frame: CGRect(x: 0.0, y: 0.0, width: UIScreen.main.bounds.width, height: 72.0))
+    }()
+    
     private lazy var titleTextField: UITextField = {
         let textField = UITextField()
         textField.attributedPlaceholder = NSAttributedString(string: "책 제목", attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
         textField.font = UIFont(name: "Pretendard-Medium", size: 20)
         textField.textColor = .black
         textField.delegate = self
+        
+        textField.inputAccessoryView = accessoryView
+        textField.translatesAutoresizingMaskIntoConstraints = false
+        
         return textField
     }()
+
     
     private lazy var underLineView: UIView = {
         let lineView = UIView()
@@ -37,28 +50,55 @@ final class AddBookViewController: UIViewController {
     
     private lazy var searchButton: SquareButton = {
         let button = SquareButton(title: "검색")
-        //button.isUserInteractionEnabled = false
+        button.addTarget(self, action: #selector(goToChooseBook), for: .touchUpInside)
         return button
     }()
+    
+    @objc func goToChooseBook() {
+        let vc = ChooseBookViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    //빈 화면 터치 시 키보드 내리기
+    private func addTapGesture() {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard(_:)))
+        view.addGestureRecognizer(tapGesture)
+    }
+    
+    @objc
+    private func hideKeyboard(_ sender: Any) {
+        view.endEditing(true)
+    }
+    
+    
+  
     override func viewDidLoad() {
         super.viewDidLoad()
         setupLayout()
+        setupNavigationBar()
         view.backgroundColor = UIColor(named: "bt-bgcolor")
+        
+        addTapGesture()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) { //화면이 전환되자마자
+        super.viewWillAppear(animated)
+        tabBarController?.tabBar.isHidden = true //탭바 숨기기
+        
+        self.titleTextField.becomeFirstResponder()
     }
 
 }
 
-extension AddBookViewController {
+extension SearchBookViewController {
     func setupNavigationBar() {
         navigationController?.navigationBar.topItem?.title = ""
         let backButton = navigationController?.navigationBar.topItem?.backBarButtonItem
         backButton?.tintColor = UIColor(named: "bt-black")
-        
-        //backbutton 누르면 탭 바 다시 생김
     }
 }
 
-extension AddBookViewController {
+extension SearchBookViewController {
     func setupLayout(){
         [label,titleTextField,underLineView,searchButton].forEach{view.addSubview($0)}
         label.snp.makeConstraints{
@@ -78,19 +118,33 @@ extension AddBookViewController {
             $0.leading.equalTo(titleTextField)
             $0.trailing.equalTo(titleTextField)
         }
+        
         searchButton.snp.makeConstraints{
             $0.bottom.equalTo(view.safeAreaLayoutGuide).inset(20)
             $0.centerX.equalTo(view.safeAreaLayoutGuide.snp.centerX)
         }
+        
+        accessoryView.addSubview(searchButton)
+        guard let searchButtonSuperview = searchButton.superview else {return}
+        searchButton.leadingAnchor.constraint(equalTo: searchButtonSuperview.leadingAnchor, constant: 16).isActive = true
+        searchButton.trailingAnchor.constraint(equalTo: searchButtonSuperview.trailingAnchor, constant: -16).isActive = true
+        searchButton.heightAnchor.constraint(equalToConstant: 56).isActive = true
     }
 }
 
-extension AddBookViewController: UITextFieldDelegate {
-    /*func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
-        //자동완성
+
+extension SearchBookViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        //return 키 눌렀을 때 키보드 내리기
+        self.titleTextField.resignFirstResponder()
         
-    }*/
-    
+        //검색 -> 화면전환
+        let vc = ChooseBookViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
+        
+        return true
+    }
 
 }
+
 

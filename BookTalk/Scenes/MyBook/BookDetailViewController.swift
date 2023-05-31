@@ -55,7 +55,7 @@ final class BookDetailViewController: UIViewController {
     private lazy var writeButton: UIButton = {
         let button = UIButton(type: .custom, primaryAction: UIAction(handler: { _ in
             let vc = BookWriteViewController()
-            self.navigationController?.pushViewController(vc, animated: true)
+            self.navigationController?.pushViewController(vc, animated: true) //present로 바꾸기
         }))
         button.setTitle("기록하기", for: .normal)
         button.tintColor = .black
@@ -71,6 +71,11 @@ final class BookDetailViewController: UIViewController {
         setupLayout()
         imageView.image = UIImage(named: "데미안")
         view.backgroundColor = UIColor(named: "bt-bgcolor")
+    }
+    
+    override func viewWillAppear(_ animated: Bool) { //탭바 숨기기
+        super.viewWillAppear(animated)
+        tabBarController?.tabBar.isHidden = true
     }
 
 }

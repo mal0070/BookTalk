@@ -16,15 +16,7 @@ class BookWriteViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+    //textView에 기록하면 기록한 내용 BookDetailView에 돌려주면서 -> 화면변경: 기록추가, 버튼(기록하기->기록수정)
+    //outStargram 참고
 
 }

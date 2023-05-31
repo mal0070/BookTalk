@@ -38,7 +38,7 @@ class RoundButton: UIButton {
         self.backgroundColor = bgColor
         
         self.configuration?.image = UIImage(systemName: imageName)
-        self.configuration?.baseForegroundColor = titleColor //아오ㅡㅡ
+        self.configuration?.baseForegroundColor = titleColor
         self.configuration?.preferredSymbolConfigurationForImage = UIImage.SymbolConfiguration(pointSize: 20)
         self.configuration?.imagePlacement = .leading
         self.configuration?.imagePadding = 57

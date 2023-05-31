@@ -25,9 +25,12 @@
 		2F82FC5B2A1CA89300480FB3 /* UnderLineSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F82FC5A2A1CA89300480FB3 /* UnderLineSegmentedControl.swift */; };
 		2F82FC622A1D06F700480FB3 /* BookDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F82FC612A1D06F700480FB3 /* BookDetailViewController.swift */; };
 		2F82FC642A1D0D0900480FB3 /* SquareButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F82FC632A1D0D0900480FB3 /* SquareButton.swift */; };
-		2F82FC662A1D0FA200480FB3 /* AddBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F82FC652A1D0FA200480FB3 /* AddBookViewController.swift */; };
 		2F82FC692A1DB99D00480FB3 /* 데미안.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 2F82FC682A1DB99D00480FB3 /* 데미안.jpeg */; };
 		2F82FC6B2A1DBD5000480FB3 /* BookWriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F82FC6A2A1DBD5000480FB3 /* BookWriteViewController.swift */; };
+		2FB0795D2A260F07005964A4 /* SearchBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB0795C2A260F07005964A4 /* SearchBookViewController.swift */; };
+		2FB0795F2A261579005964A4 /* ChooseBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB0795E2A261579005964A4 /* ChooseBookViewController.swift */; };
+		2FB079672A2738EC005964A4 /* ChooseBookTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB079652A2738EC005964A4 /* ChooseBookTableViewCell.swift */; };
+		2FB079682A2738EC005964A4 /* ChooseBookTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2FB079662A2738EC005964A4 /* ChooseBookTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,9 +53,12 @@
 		2F82FC5A2A1CA89300480FB3 /* UnderLineSegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnderLineSegmentedControl.swift; sourceTree = "<group>"; };
 		2F82FC612A1D06F700480FB3 /* BookDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailViewController.swift; sourceTree = "<group>"; };
 		2F82FC632A1D0D0900480FB3 /* SquareButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquareButton.swift; sourceTree = "<group>"; };
-		2F82FC652A1D0FA200480FB3 /* AddBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBookViewController.swift; sourceTree = "<group>"; };
 		2F82FC682A1DB99D00480FB3 /* 데미안.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "데미안.jpeg"; sourceTree = "<group>"; };
 		2F82FC6A2A1DBD5000480FB3 /* BookWriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookWriteViewController.swift; sourceTree = "<group>"; };
+		2FB0795C2A260F07005964A4 /* SearchBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBookViewController.swift; sourceTree = "<group>"; };
+		2FB0795E2A261579005964A4 /* ChooseBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseBookViewController.swift; sourceTree = "<group>"; };
+		2FB079652A2738EC005964A4 /* ChooseBookTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseBookTableViewCell.swift; sourceTree = "<group>"; };
+		2FB079662A2738EC005964A4 /* ChooseBookTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChooseBookTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,9 +150,9 @@
 			children = (
 				2F0552FA2A1B71110081A4F2 /* MyBookViewController.swift */,
 				2F82FC562A1C96D200480FB3 /* BookCollectionViewCell.swift */,
-				2F82FC652A1D0FA200480FB3 /* AddBookViewController.swift */,
 				2F82FC612A1D06F700480FB3 /* BookDetailViewController.swift */,
 				2F82FC6A2A1DBD5000480FB3 /* BookWriteViewController.swift */,
+				2FB079602A261583005964A4 /* AddBook */,
 			);
 			path = MyBook;
 			sourceTree = "<group>";
@@ -157,6 +163,17 @@
 				2F82FC682A1DB99D00480FB3 /* 데미안.jpeg */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		2FB079602A261583005964A4 /* AddBook */ = {
+			isa = PBXGroup;
+			children = (
+				2FB0795C2A260F07005964A4 /* SearchBookViewController.swift */,
+				2FB0795E2A261579005964A4 /* ChooseBookViewController.swift */,
+				2FB079652A2738EC005964A4 /* ChooseBookTableViewCell.swift */,
+				2FB079662A2738EC005964A4 /* ChooseBookTableViewCell.xib */,
+			);
+			path = AddBook;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -226,6 +243,7 @@
 				2F82FC692A1DB99D00480FB3 /* 데미안.jpeg in Resources */,
 				2F0552E12A1A35E90081A4F2 /* LaunchScreen.storyboard in Resources */,
 				2F0552EE2A1A3B010081A4F2 /* Pretendard-Medium.otf in Resources */,
+				2FB079682A2738EC005964A4 /* ChooseBookTableViewCell.xib in Resources */,
 				2F0552EC2A1A3B010081A4F2 /* Pretendard-Bold.otf in Resources */,
 				2F0552ED2A1A3B010081A4F2 /* Pretendard-ExtraBold.otf in Resources */,
 				2F0552DE2A1A35E90081A4F2 /* Assets.xcassets in Resources */,
@@ -241,15 +259,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				2F82FC5B2A1CA89300480FB3 /* UnderLineSegmentedControl.swift in Sources */,
-				2F82FC662A1D0FA200480FB3 /* AddBookViewController.swift in Sources */,
 				2F0552F72A1B3C590081A4F2 /* TabBarController.swift in Sources */,
 				2F82FC572A1C96D200480FB3 /* BookCollectionViewCell.swift in Sources */,
 				2F0552FB2A1B71110081A4F2 /* MyBookViewController.swift in Sources */,
+				2FB079672A2738EC005964A4 /* ChooseBookTableViewCell.swift in Sources */,
 				2F82FC642A1D0D0900480FB3 /* SquareButton.swift in Sources */,
 				2F82FC6B2A1DBD5000480FB3 /* BookWriteViewController.swift in Sources */,
+				2FB0795D2A260F07005964A4 /* SearchBookViewController.swift in Sources */,
 				2F82FC622A1D06F700480FB3 /* BookDetailViewController.swift in Sources */,
 				2F0552F92A1B70FC0081A4F2 /* DebateViewController.swift in Sources */,
 				2F0552F52A1A4BDE0081A4F2 /* RoundButton.swift in Sources */,
+				2FB0795F2A261579005964A4 /* ChooseBookViewController.swift in Sources */,
 				2F0552D92A1A35E80081A4F2 /* LoginViewController.swift in Sources */,
 				2F0552D52A1A35E80081A4F2 /* AppDelegate.swift in Sources */,
 				2F0552D72A1A35E80081A4F2 /* SceneDelegate.swift in Sources */,

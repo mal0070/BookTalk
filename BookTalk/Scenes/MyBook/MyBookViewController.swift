@@ -28,9 +28,8 @@ final class MyBookViewController: UIViewController {
     
     private lazy var addBookButton: UIButton = {
         let button = UIButton(type: .custom, primaryAction: UIAction(handler: { _ in
-            let vc = AddBookViewController()
+            let vc = SearchBookViewController()
             self.navigationController?.pushViewController(vc, animated: true)
-            self.tabBarController?.tabBar.isHidden = true //back button 누르면 다시 생기게 해야함
         }))
         button.configuration = config
         button.configuration?.image = UIImage(systemName: "plus")
@@ -67,6 +66,11 @@ final class MyBookViewController: UIViewController {
         
         view.backgroundColor = UIColor(named: "bt-bgcolor")
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tabBarController?.tabBar.isHidden = false
+    }
 
 }
 
@@ -96,10 +100,7 @@ extension MyBookViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         //let bookDetail = postList[indexPath.item]
         let vc = BookDetailViewController()
-        vc.modalPresentationStyle = .fullScreen
-        vc.modalTransitionStyle = .crossDissolve
-        
-        self.present(vc, animated: true)
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
 
@@ -116,6 +117,7 @@ extension MyBookViewController: UICollectionViewDataSource {
     
     
 }
+
 
 
 
