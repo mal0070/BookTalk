@@ -26,36 +26,30 @@ final class BookDetailViewController: UIViewController {
     
     private lazy var authorLabel: UILabel = {
         let label = UILabel()
-        label.text = "헤르만 헤세"
+        label.text = "헤르만 헤세 저"
         label.font = UIFont(name: "Pretendard-Medium", size: 20)
+        label.textColor = .secondaryLabel
         return label
     }()
     
-    private lazy var companyLabel: UILabel = {
-        let label = UILabel()
-        label.text = "민음사"
-        label.font = UIFont(name: "Pretendard-Medium", size: 20)
-        return label
-    }()
-   
-    private lazy var topLabel: UILabel = {
-        let label = UILabel()
-        label.text = "내가 쓴 글"
-        label.font = UIFont(name: "Pretendard-Bold", size: 20)
-        return label
-    }()
     
-    private lazy var noneLabel: UILabel = {
-        let label = UILabel()
-        label.text = "기록된 글이 없습니다"
-        label.font = UIFont(name: "Pretendard-Medium", size: 20)
-        return label
+    lazy var recordTextView: UITextView = {
+        let textView = UITextView()
+        textView.text = "기록을 남겨보세요."
+        textView.font = UIFont(name: "Pretendard-Medium", size: 20)
+        textView.textColor = .secondaryLabel
+        
+        let padding: CGFloat = 20.0
+        let insets = UIEdgeInsets(top: padding, left: padding, bottom: 0, right: 0)
+        textView.contentInset = insets
+        
+        return textView
     }()
     
     private lazy var writeButton: UIButton = {
         let button = UIButton(type: .custom, primaryAction: UIAction(handler: { _ in
             let vc = BookWriteViewController()
-            self.navigationController?.pushViewController(vc, animated: true) //present로 바꾸기
+            self.navigationController?.pushViewController(vc, animated: true)
         }))
         button.setTitle("기록하기", for: .normal)
         button.tintColor = .black
@@ -73,46 +67,43 @@ final class BookDetailViewController: UIViewController {
         view.backgroundColor = UIColor(named: "bt-bgcolor")
     }
     
-    override func viewWillAppear(_ animated: Bool) { //탭바 숨기기
+    override func viewWillAppear(_ animated: Bool) { //화면이 전환되자마자
         super.viewWillAppear(animated)
-        tabBarController?.tabBar.isHidden = true
+        tabBarController?.tabBar.isHidden = false //탭바 나타나기
     }
+
 
 }
 
 extension BookDetailViewController {
     func setupLayout(){
-        [imageView, titleLabel, authorLabel, companyLabel, topLabel, noneLabel, writeButton].forEach{view.addSubview($0)}
+        [imageView, titleLabel, authorLabel, recordTextView, writeButton].forEach{view.addSubview($0)}
         
         imageView.snp.makeConstraints{
             $0.top.equalTo(view.safeAreaLayoutGuide).inset(20)
-            $0.leading.equalToSuperview().inset(20)
+            $0.centerX.equalTo(view.safeAreaLayoutGuide.snp.centerX)
             $0.width.equalTo(140)
             $0.height.equalTo(210)
         }
         titleLabel.snp.makeConstraints{
-            $0.top.equalTo(imageView)
-            $0.leading.equalTo(imageView.snp.trailing).offset(10)
+            $0.top.equalTo(imageView.snp.bottom).offset(20)
+            $0.centerX.equalTo(imageView)
         }
         authorLabel.snp.makeConstraints{
             $0.top.equalTo(titleLabel.snp.bottom).offset(10)
-            $0.leading.equalTo(titleLabel)
+            $0.centerX.equalTo(imageView)
         }
-        companyLabel.snp.makeConstraints{
-            $0.top.equalTo(authorLabel.snp.bottom).offset(10)
-            $0.leading.equalTo(titleLabel)
-        }
-        topLabel.snp.makeConstraints{
-            $0.top.equalTo(imageView.snp.bottom).offset(30)
-            $0.leading.equalTo(imageView)
-        }
-        noneLabel.snp.makeConstraints{
-            $0.top.equalTo(topLabel.snp.bottom).offset(100)
-            $0.centerX.equalTo(view.safeAreaLayoutGuide.snp.centerX)
+
+        recordTextView.snp.makeConstraints{
+            $0.top.equalTo(authorLabel.snp.bottom).offset(40)
+            $0.centerX.equalTo(imageView)
+            $0.leading.equalToSuperview()
+            $0.trailing.equalToSuperview()
+            $0.bottom.equalTo(view.safeAreaLayoutGuide)
         }
         writeButton.snp.makeConstraints{
-            $0.top.equalTo(noneLabel.snp.bottom).offset(20)
-            $0.centerX.equalTo(noneLabel)
+            $0.centerX.equalTo(imageView)
+            $0.bottom.equalTo(view.safeAreaLayoutGuide).inset(70)
             $0.height.equalTo(40)
             $0.width.equalTo(94)
         }
