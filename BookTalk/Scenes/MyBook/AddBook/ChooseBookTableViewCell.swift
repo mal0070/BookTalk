@@ -16,7 +16,7 @@ class ChooseBookTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        bookImageView.image = UIImage(named: "데미안")
+        //bookImageView.image = UIImage(named: "데미안")
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

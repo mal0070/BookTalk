@@ -16,15 +16,15 @@ final class DebateViewController: UIViewController {
         return control
     }()
     
-    private let firstView: UIView = {
-        let view = UIView()
+    private let firstView: UITableView = {
+        let view = UITableView()
         view.backgroundColor = .green
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
-      }()
+      }() //mydebateview
     
-    private let secondView: UIView = {
-        let view = UIView()
+    private let secondView: UITableView = {
+        let view = UITableView()
         view.backgroundColor = .yellow
         view.translatesAutoresizingMaskIntoConstraints = false
         return view

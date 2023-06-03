@@ -9,6 +9,8 @@ import UIKit
 
 final class MyBookViewController: UIViewController {
     
+    let images = ["데미안", "어린왕자", "1984", "작별인사", "상실의 시대"]
+    
     private lazy var collectionView : UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
@@ -106,12 +108,14 @@ extension MyBookViewController: UICollectionViewDelegateFlowLayout {
 
 extension MyBookViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        10
+        5
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "BookCollectionViewCell", for: indexPath) as? BookCollectionViewCell
         cell?.setup()
+        cell?.imageView.image = UIImage(named: images[indexPath.row])
+        cell?.nameLabel.text = images[indexPath.row]
         return cell ?? UICollectionViewCell()
     }
     

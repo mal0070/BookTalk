@@ -46,7 +46,7 @@ final class BookDetailViewController: UIViewController {
         return textView
     }()
     
-    private lazy var writeButton: UIButton = {
+    lazy var writeButton: UIButton = {
         let button = UIButton(type: .custom, primaryAction: UIAction(handler: { _ in
             let vc = BookWriteViewController()
             self.navigationController?.pushViewController(vc, animated: true)

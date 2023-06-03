@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 
 class BookCollectionViewCell: UICollectionViewCell {
-    private lazy var imageView : UIImageView = {
+    lazy var imageView : UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
         imageView.backgroundColor = .darkGray
@@ -17,7 +17,7 @@ class BookCollectionViewCell: UICollectionViewCell {
         return imageView
     }()
     
-    private lazy var nameLabel: UILabel = {
+    lazy var nameLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont(name: "Pretendard-Light", size: 20.0)
         return label
@@ -25,8 +25,8 @@ class BookCollectionViewCell: UICollectionViewCell {
     
     func setup() {
         setupLayout()
-        nameLabel.text = "데미안"
-        imageView.image = UIImage(named: "데미안")
+        //nameLabel.text = "데미안"
+        //imageView.image = UIImage(named: "데미안")
     }
 }
 

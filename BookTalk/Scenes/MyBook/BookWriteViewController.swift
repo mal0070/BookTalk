@@ -55,7 +55,7 @@ private extension BookWriteViewController {
        
         vc.recordTextView.text = textView.text
         vc.recordTextView.textColor = .black
-    
+        vc.writeButton.setTitle("기록 수정", for: .normal)
         self.navigationController?.pushViewController(vc, animated: true)
     }
     

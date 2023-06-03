@@ -10,6 +10,8 @@ import SnapKit
 
 class ChooseBookViewController: UIViewController {
     
+    let images = ["데미안", "데미안2", "데미안3", "데미안4", "데미안5"]
+    
     private lazy var label: UILabel = {
         let label = UILabel()
         label.text = "읽은 책을 \n선택해주세요"
@@ -153,8 +155,10 @@ extension ChooseBookViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ChooseBookTableViewCell", for: indexPath) as! ChooseBookTableViewCell
         cell.backgroundColor = UIColor(named: "bt-bgcolor")
+        cell.bookImageView.image = UIImage(named: images[indexPath.row])
+        
         return cell
     }
 
 }
-//tableView가 안뜸..왜죠
+
