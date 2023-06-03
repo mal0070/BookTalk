@@ -11,14 +11,14 @@ import SnapKit
 final class DebateViewController: UIViewController {
     
     private let segmentedControl : UnderlineSegmentedControl = {
-        let control = UnderlineSegmentedControl(items: ["탐색", "내 토론"])
+        let control = UnderlineSegmentedControl(items: ["내 토론", "탐색"])
         control.translatesAutoresizingMaskIntoConstraints = false
         return control
     }()
     
-    private let firstView: UITableView = {
-        let view = UITableView()
-        view.backgroundColor = .green
+    private let firstView: MyDebateView = {
+        let view = MyDebateView()
+        view.backgroundColor = UIColor(named: "bt-bgcolor")
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
       }() //mydebateview
