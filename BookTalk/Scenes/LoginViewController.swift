@@ -47,7 +47,7 @@ final class LoginViewController: UIViewController {
     private lazy var loginLabel : UILabel = {
         let clickLabel = UITapGestureRecognizer(target: self, action: #selector(goToTab))
         let label = UILabel()
-        label.text = "로그인"
+        label.text = "비회원 로그인"
         label.textColor = .black
         label.font = UIFont(name: "Pretendard-Light", size: 19.0)
         label.addGestureRecognizer(clickLabel)

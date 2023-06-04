@@ -25,20 +25,12 @@
 		2F82FC5B2A1CA89300480FB3 /* UnderLineSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F82FC5A2A1CA89300480FB3 /* UnderLineSegmentedControl.swift */; };
 		2F82FC622A1D06F700480FB3 /* BookDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F82FC612A1D06F700480FB3 /* BookDetailViewController.swift */; };
 		2F82FC642A1D0D0900480FB3 /* SquareButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F82FC632A1D0D0900480FB3 /* SquareButton.swift */; };
-		2F82FC692A1DB99D00480FB3 /* 데미안.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 2F82FC682A1DB99D00480FB3 /* 데미안.jpeg */; };
 		2F82FC6B2A1DBD5000480FB3 /* BookWriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F82FC6A2A1DBD5000480FB3 /* BookWriteViewController.swift */; };
 		2FB0795D2A260F07005964A4 /* SearchBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB0795C2A260F07005964A4 /* SearchBookViewController.swift */; };
 		2FB0795F2A261579005964A4 /* ChooseBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB0795E2A261579005964A4 /* ChooseBookViewController.swift */; };
 		2FB079672A2738EC005964A4 /* ChooseBookTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB079652A2738EC005964A4 /* ChooseBookTableViewCell.swift */; };
 		2FB079682A2738EC005964A4 /* ChooseBookTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2FB079662A2738EC005964A4 /* ChooseBookTableViewCell.xib */; };
-		2FBBEAB22A2BFC2D000349BD /* 데미안2.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 2FBBEAB12A2BFC2D000349BD /* 데미안2.jpeg */; };
-		2FBBEAB82A2BFC51000349BD /* 데미안5.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 2FBBEAB42A2BFC51000349BD /* 데미안5.jpeg */; };
-		2FBBEAB92A2BFC51000349BD /* 어린왕자.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 2FBBEAB52A2BFC51000349BD /* 어린왕자.jpeg */; };
-		2FBBEABA2A2BFC51000349BD /* 데미안3.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 2FBBEAB62A2BFC51000349BD /* 데미안3.jpeg */; };
-		2FBBEABC2A2BFCEA000349BD /* 1984.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 2FBBEABB2A2BFCEA000349BD /* 1984.jpeg */; };
-		2FBBEABE2A2BFCF0000349BD /* 데미안4.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 2FBBEABD2A2BFCF0000349BD /* 데미안4.jpeg */; };
-		2FBBEAC02A2C0200000349BD /* 작별인사.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 2FBBEABF2A2C0200000349BD /* 작별인사.jpeg */; };
-		2FBBEAC22A2C025B000349BD /* 상실의 시대.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 2FBBEAC12A2C025B000349BD /* 상실의 시대.jpeg */; };
+		2FBBEAC42A2C0D2A000349BD /* ExploreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBBEAC32A2C0D2A000349BD /* ExploreView.swift */; };
 		2FE6A36E2A2B05070080F78D /* MyDebateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE6A36D2A2B05070080F78D /* MyDebateView.swift */; };
 		2FE731CA2A2A063C00CEF32F /* MyDebateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE731C82A2A063C00CEF32F /* MyDebateTableViewCell.swift */; };
 		2FE731CB2A2A063C00CEF32F /* MyDebateTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2FE731C92A2A063C00CEF32F /* MyDebateTableViewCell.xib */; };
@@ -67,20 +59,12 @@
 		2F82FC5A2A1CA89300480FB3 /* UnderLineSegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnderLineSegmentedControl.swift; sourceTree = "<group>"; };
 		2F82FC612A1D06F700480FB3 /* BookDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailViewController.swift; sourceTree = "<group>"; };
 		2F82FC632A1D0D0900480FB3 /* SquareButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquareButton.swift; sourceTree = "<group>"; };
-		2F82FC682A1DB99D00480FB3 /* 데미안.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "데미안.jpeg"; sourceTree = "<group>"; };
 		2F82FC6A2A1DBD5000480FB3 /* BookWriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookWriteViewController.swift; sourceTree = "<group>"; };
 		2FB0795C2A260F07005964A4 /* SearchBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBookViewController.swift; sourceTree = "<group>"; };
 		2FB0795E2A261579005964A4 /* ChooseBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseBookViewController.swift; sourceTree = "<group>"; };
 		2FB079652A2738EC005964A4 /* ChooseBookTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseBookTableViewCell.swift; sourceTree = "<group>"; };
 		2FB079662A2738EC005964A4 /* ChooseBookTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChooseBookTableViewCell.xib; sourceTree = "<group>"; };
-		2FBBEAB12A2BFC2D000349BD /* 데미안2.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "데미안2.jpeg"; sourceTree = "<group>"; };
-		2FBBEAB42A2BFC51000349BD /* 데미안5.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "데미안5.jpeg"; sourceTree = "<group>"; };
-		2FBBEAB52A2BFC51000349BD /* 어린왕자.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "어린왕자.jpeg"; sourceTree = "<group>"; };
-		2FBBEAB62A2BFC51000349BD /* 데미안3.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "데미안3.jpeg"; sourceTree = "<group>"; };
-		2FBBEABB2A2BFCEA000349BD /* 1984.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1984.jpeg; sourceTree = "<group>"; };
-		2FBBEABD2A2BFCF0000349BD /* 데미안4.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "데미안4.jpeg"; sourceTree = "<group>"; };
-		2FBBEABF2A2C0200000349BD /* 작별인사.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "작별인사.jpeg"; sourceTree = "<group>"; };
-		2FBBEAC12A2C025B000349BD /* 상실의 시대.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "상실의 시대.jpeg"; sourceTree = "<group>"; };
+		2FBBEAC32A2C0D2A000349BD /* ExploreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreView.swift; sourceTree = "<group>"; };
 		2FE6A36D2A2B05070080F78D /* MyDebateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDebateView.swift; sourceTree = "<group>"; };
 		2FE731C82A2A063C00CEF32F /* MyDebateTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDebateTableViewCell.swift; sourceTree = "<group>"; };
 		2FE731C92A2A063C00CEF32F /* MyDebateTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyDebateTableViewCell.xib; sourceTree = "<group>"; };
@@ -125,7 +109,6 @@
 				2F82FC5C2A1CABC300480FB3 /* Scenes */,
 				2F82FC5E2A1CABEA00480FB3 /* Custom */,
 				2F0552F02A1A3B080081A4F2 /* Fonts */,
-				2F82FC672A1DB98400480FB3 /* Resources */,
 				2F0552DD2A1A35E90081A4F2 /* Assets.xcassets */,
 				2F0552DF2A1A35E90081A4F2 /* LaunchScreen.storyboard */,
 				2F0552E22A1A35E90081A4F2 /* Info.plist */,
@@ -170,6 +153,7 @@
 			children = (
 				2F0552F82A1B70FC0081A4F2 /* DebateViewController.swift */,
 				2FE6A36D2A2B05070080F78D /* MyDebateView.swift */,
+				2FBBEAC32A2C0D2A000349BD /* ExploreView.swift */,
 				2FE731C82A2A063C00CEF32F /* MyDebateTableViewCell.swift */,
 				2FE731C92A2A063C00CEF32F /* MyDebateTableViewCell.xib */,
 				2FE731D12A2A0CFC00CEF32F /* DebateDetailViewController.swift */,
@@ -189,22 +173,6 @@
 				2FB079602A261583005964A4 /* AddBook */,
 			);
 			path = MyBook;
-			sourceTree = "<group>";
-		};
-		2F82FC672A1DB98400480FB3 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				2FBBEAC12A2C025B000349BD /* 상실의 시대.jpeg */,
-				2FBBEABF2A2C0200000349BD /* 작별인사.jpeg */,
-				2F82FC682A1DB99D00480FB3 /* 데미안.jpeg */,
-				2FBBEAB12A2BFC2D000349BD /* 데미안2.jpeg */,
-				2FBBEAB62A2BFC51000349BD /* 데미안3.jpeg */,
-				2FBBEABD2A2BFCF0000349BD /* 데미안4.jpeg */,
-				2FBBEAB42A2BFC51000349BD /* 데미안5.jpeg */,
-				2FBBEAB52A2BFC51000349BD /* 어린왕자.jpeg */,
-				2FBBEABB2A2BFCEA000349BD /* 1984.jpeg */,
-			);
-			path = Resources;
 			sourceTree = "<group>";
 		};
 		2FB079602A261583005964A4 /* AddBook */ = {
@@ -282,19 +250,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2FBBEABE2A2BFCF0000349BD /* 데미안4.jpeg in Resources */,
-				2FBBEABC2A2BFCEA000349BD /* 1984.jpeg in Resources */,
-				2FBBEAC02A2C0200000349BD /* 작별인사.jpeg in Resources */,
-				2FBBEAB82A2BFC51000349BD /* 데미안5.jpeg in Resources */,
 				2FE731D62A2A0D4A00CEF32F /* DebateCommentTableViewCell.xib in Resources */,
-				2FBBEABA2A2BFC51000349BD /* 데미안3.jpeg in Resources */,
-				2F82FC692A1DB99D00480FB3 /* 데미안.jpeg in Resources */,
-				2FBBEAC22A2C025B000349BD /* 상실의 시대.jpeg in Resources */,
 				2FE731CB2A2A063C00CEF32F /* MyDebateTableViewCell.xib in Resources */,
 				2F0552E12A1A35E90081A4F2 /* LaunchScreen.storyboard in Resources */,
-				2FBBEAB22A2BFC2D000349BD /* 데미안2.jpeg in Resources */,
 				2F0552EE2A1A3B010081A4F2 /* Pretendard-Medium.otf in Resources */,
-				2FBBEAB92A2BFC51000349BD /* 어린왕자.jpeg in Resources */,
 				2FB079682A2738EC005964A4 /* ChooseBookTableViewCell.xib in Resources */,
 				2F0552EC2A1A3B010081A4F2 /* Pretendard-Bold.otf in Resources */,
 				2F0552ED2A1A3B010081A4F2 /* Pretendard-ExtraBold.otf in Resources */,
@@ -324,6 +283,7 @@
 				2F0552F92A1B70FC0081A4F2 /* DebateViewController.swift in Sources */,
 				2F0552F52A1A4BDE0081A4F2 /* RoundButton.swift in Sources */,
 				2FE6A36E2A2B05070080F78D /* MyDebateView.swift in Sources */,
+				2FBBEAC42A2C0D2A000349BD /* ExploreView.swift in Sources */,
 				2FB0795F2A261579005964A4 /* ChooseBookViewController.swift in Sources */,
 				2F0552D92A1A35E80081A4F2 /* LoginViewController.swift in Sources */,
 				2F0552D52A1A35E80081A4F2 /* AppDelegate.swift in Sources */,

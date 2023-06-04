@@ -23,9 +23,9 @@ final class DebateViewController: UIViewController {
         return view
       }() //mydebateview
     
-    private let secondView: UITableView = {
-        let view = UITableView()
-        view.backgroundColor = .yellow
+    private let secondView: ExploreView = {
+        let view = ExploreView()
+        view.backgroundColor = UIColor(named: "bt-bgcolor")
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
       }()
