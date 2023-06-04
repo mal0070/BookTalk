@@ -42,12 +42,15 @@ private extension BookWriteViewController {
     func setupNavigationBar(){
         navigationItem.title = "기록하기"
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "xmark"), style: .plain, target: self, action: #selector(cancel))
+        navigationItem.leftBarButtonItem?.tintColor = .black
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "checkmark"), style: .plain, target: self, action: #selector(upload))
+        navigationItem.rightBarButtonItem?.tintColor = .black
         
     }
     
     @objc func cancel(){
         let vc = BookDetailViewController()
+        vc.navigationItem.hidesBackButton = true
         self.navigationController?.pushViewController(vc, animated: true)
     }
     @objc func upload() {
@@ -56,6 +59,7 @@ private extension BookWriteViewController {
         vc.recordTextView.text = textView.text
         vc.recordTextView.textColor = .black
         vc.writeButton.setTitle("기록 수정", for: .normal)
+        vc.navigationItem.hidesBackButton = true
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
