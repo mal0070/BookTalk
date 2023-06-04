@@ -31,6 +31,10 @@
 		2FB079672A2738EC005964A4 /* ChooseBookTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB079652A2738EC005964A4 /* ChooseBookTableViewCell.swift */; };
 		2FB079682A2738EC005964A4 /* ChooseBookTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2FB079662A2738EC005964A4 /* ChooseBookTableViewCell.xib */; };
 		2FBBEAC42A2C0D2A000349BD /* ExploreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBBEAC32A2C0D2A000349BD /* ExploreView.swift */; };
+		2FBBEACB2A2C13C4000349BD /* ChooseDebateBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBBEACA2A2C13C4000349BD /* ChooseDebateBookViewController.swift */; };
+		2FBBEACD2A2C13DD000349BD /* SearchDebateBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBBEACC2A2C13DD000349BD /* SearchDebateBookViewController.swift */; };
+		2FBBEAD02A2C1428000349BD /* SubjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBBEACF2A2C1428000349BD /* SubjectViewController.swift */; };
+		2FBBEAD22A2C143E000349BD /* OpinionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBBEAD12A2C143E000349BD /* OpinionViewController.swift */; };
 		2FE6A36E2A2B05070080F78D /* MyDebateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE6A36D2A2B05070080F78D /* MyDebateView.swift */; };
 		2FE731CA2A2A063C00CEF32F /* MyDebateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE731C82A2A063C00CEF32F /* MyDebateTableViewCell.swift */; };
 		2FE731CB2A2A063C00CEF32F /* MyDebateTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2FE731C92A2A063C00CEF32F /* MyDebateTableViewCell.xib */; };
@@ -65,6 +69,10 @@
 		2FB079652A2738EC005964A4 /* ChooseBookTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseBookTableViewCell.swift; sourceTree = "<group>"; };
 		2FB079662A2738EC005964A4 /* ChooseBookTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChooseBookTableViewCell.xib; sourceTree = "<group>"; };
 		2FBBEAC32A2C0D2A000349BD /* ExploreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreView.swift; sourceTree = "<group>"; };
+		2FBBEACA2A2C13C4000349BD /* ChooseDebateBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseDebateBookViewController.swift; sourceTree = "<group>"; };
+		2FBBEACC2A2C13DD000349BD /* SearchDebateBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDebateBookViewController.swift; sourceTree = "<group>"; };
+		2FBBEACF2A2C1428000349BD /* SubjectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectViewController.swift; sourceTree = "<group>"; };
+		2FBBEAD12A2C143E000349BD /* OpinionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpinionViewController.swift; sourceTree = "<group>"; };
 		2FE6A36D2A2B05070080F78D /* MyDebateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDebateView.swift; sourceTree = "<group>"; };
 		2FE731C82A2A063C00CEF32F /* MyDebateTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDebateTableViewCell.swift; sourceTree = "<group>"; };
 		2FE731C92A2A063C00CEF32F /* MyDebateTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyDebateTableViewCell.xib; sourceTree = "<group>"; };
@@ -156,9 +164,8 @@
 				2FBBEAC32A2C0D2A000349BD /* ExploreView.swift */,
 				2FE731C82A2A063C00CEF32F /* MyDebateTableViewCell.swift */,
 				2FE731C92A2A063C00CEF32F /* MyDebateTableViewCell.xib */,
-				2FE731D12A2A0CFC00CEF32F /* DebateDetailViewController.swift */,
-				2FE731D32A2A0D4A00CEF32F /* DebateCommentTableViewCell.swift */,
-				2FE731D42A2A0D4A00CEF32F /* DebateCommentTableViewCell.xib */,
+				2FBBEAC82A2C132E000349BD /* AddDebate */,
+				2FBBEAC92A2C1346000349BD /* JoinDebate */,
 			);
 			path = Debate;
 			sourceTree = "<group>";
@@ -168,8 +175,7 @@
 			children = (
 				2F0552FA2A1B71110081A4F2 /* MyBookViewController.swift */,
 				2F82FC562A1C96D200480FB3 /* BookCollectionViewCell.swift */,
-				2F82FC612A1D06F700480FB3 /* BookDetailViewController.swift */,
-				2F82FC6A2A1DBD5000480FB3 /* BookWriteViewController.swift */,
+				2FBBEAC72A2C130F000349BD /* BookDetail */,
 				2FB079602A261583005964A4 /* AddBook */,
 			);
 			path = MyBook;
@@ -184,6 +190,36 @@
 				2FB079662A2738EC005964A4 /* ChooseBookTableViewCell.xib */,
 			);
 			path = AddBook;
+			sourceTree = "<group>";
+		};
+		2FBBEAC72A2C130F000349BD /* BookDetail */ = {
+			isa = PBXGroup;
+			children = (
+				2F82FC6A2A1DBD5000480FB3 /* BookWriteViewController.swift */,
+				2F82FC612A1D06F700480FB3 /* BookDetailViewController.swift */,
+			);
+			path = BookDetail;
+			sourceTree = "<group>";
+		};
+		2FBBEAC82A2C132E000349BD /* AddDebate */ = {
+			isa = PBXGroup;
+			children = (
+				2FBBEACC2A2C13DD000349BD /* SearchDebateBookViewController.swift */,
+				2FBBEACA2A2C13C4000349BD /* ChooseDebateBookViewController.swift */,
+				2FBBEACF2A2C1428000349BD /* SubjectViewController.swift */,
+				2FBBEAD12A2C143E000349BD /* OpinionViewController.swift */,
+			);
+			path = AddDebate;
+			sourceTree = "<group>";
+		};
+		2FBBEAC92A2C1346000349BD /* JoinDebate */ = {
+			isa = PBXGroup;
+			children = (
+				2FE731D12A2A0CFC00CEF32F /* DebateDetailViewController.swift */,
+				2FE731D32A2A0D4A00CEF32F /* DebateCommentTableViewCell.swift */,
+				2FE731D42A2A0D4A00CEF32F /* DebateCommentTableViewCell.xib */,
+			);
+			path = JoinDebate;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -277,7 +313,10 @@
 				2FB079672A2738EC005964A4 /* ChooseBookTableViewCell.swift in Sources */,
 				2F82FC642A1D0D0900480FB3 /* SquareButton.swift in Sources */,
 				2F82FC6B2A1DBD5000480FB3 /* BookWriteViewController.swift in Sources */,
+				2FBBEAD02A2C1428000349BD /* SubjectViewController.swift in Sources */,
+				2FBBEAD22A2C143E000349BD /* OpinionViewController.swift in Sources */,
 				2FB0795D2A260F07005964A4 /* SearchBookViewController.swift in Sources */,
+				2FBBEACB2A2C13C4000349BD /* ChooseDebateBookViewController.swift in Sources */,
 				2F82FC622A1D06F700480FB3 /* BookDetailViewController.swift in Sources */,
 				2FE731D22A2A0CFC00CEF32F /* DebateDetailViewController.swift in Sources */,
 				2F0552F92A1B70FC0081A4F2 /* DebateViewController.swift in Sources */,
@@ -288,6 +327,7 @@
 				2F0552D92A1A35E80081A4F2 /* LoginViewController.swift in Sources */,
 				2F0552D52A1A35E80081A4F2 /* AppDelegate.swift in Sources */,
 				2FE731CA2A2A063C00CEF32F /* MyDebateTableViewCell.swift in Sources */,
+				2FBBEACD2A2C13DD000349BD /* SearchDebateBookViewController.swift in Sources */,
 				2F0552D72A1A35E80081A4F2 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

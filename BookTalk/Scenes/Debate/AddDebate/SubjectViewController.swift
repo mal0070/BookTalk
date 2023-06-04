@@ -1,17 +1,19 @@
 //
-//  SearchBookViewController.swift
+//  SubjectViewController.swift
 //  BookTalk
 //
-//  Created by 이민아 on 2023/05/30.
+//  Created by 이민아 on 2023/06/04.
 //
+
+
 import UIKit
 import SnapKit
 
-final class SearchBookViewController: UIViewController {
+final class SubjectViewController: UIViewController {
     
     private lazy var label: UILabel = {
         let label = UILabel()
-        label.text = "책 제목을 \n입력해주세요"
+        label.text = "토론 주제를 \n입력해주세요"
         label.numberOfLines = 2
         label.font = UIFont(name: "Pretendard-Medium", size: 30)
         label.textColor = UIColor(named: "bt-black")
@@ -25,7 +27,7 @@ final class SearchBookViewController: UIViewController {
     
     private lazy var titleTextField: UITextField = {
         let textField = UITextField()
-        textField.attributedPlaceholder = NSAttributedString(string: "책 제목", attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
+        textField.attributedPlaceholder = NSAttributedString(string: "무엇에 대해 토론할까요?", attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
         textField.font = UIFont(name: "Pretendard-Medium", size: 20)
         textField.textColor = .black
         textField.delegate = self
@@ -47,12 +49,12 @@ final class SearchBookViewController: UIViewController {
     
     private lazy var searchButton: SquareButton = {
         let button = SquareButton(title: "검색")
-        button.addTarget(self, action: #selector(goToChooseBook), for: .touchUpInside)
+        button.addTarget(self, action: #selector(goToOpinion), for: .touchUpInside)
         return button
     }()
     
-    @objc func goToChooseBook() {
-        let vc = ChooseBookViewController()
+    @objc func goToOpinion() {
+        let vc = OpinionViewController()
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
@@ -87,7 +89,7 @@ final class SearchBookViewController: UIViewController {
 
 }
 
-extension SearchBookViewController {
+extension SubjectViewController {
     func setupNavigationBar() {
         navigationController?.navigationBar.topItem?.title = ""
         let backButton = navigationController?.navigationBar.topItem?.backBarButtonItem
@@ -95,7 +97,7 @@ extension SearchBookViewController {
     }
 }
 
-extension SearchBookViewController {
+extension SubjectViewController {
     func setupLayout(){
         [label,titleTextField,underLineView,searchButton].forEach{view.addSubview($0)}
         label.snp.makeConstraints{
@@ -130,13 +132,13 @@ extension SearchBookViewController {
 }
 
 
-extension SearchBookViewController: UITextFieldDelegate {
+extension SubjectViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         //return 키 눌렀을 때 키보드 내리기
         self.titleTextField.resignFirstResponder()
         
         //검색 -> 화면전환
-        let vc = ChooseBookViewController()
+        let vc = ChooseDebateBookViewController()
         self.navigationController?.pushViewController(vc, animated: true)
         
         return true

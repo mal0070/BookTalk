@@ -1,17 +1,19 @@
 //
-//  SearchBookViewController.swift
+//  OpinionViewController.swift
 //  BookTalk
 //
-//  Created by 이민아 on 2023/05/30.
+//  Created by 이민아 on 2023/06/04.
 //
+
+
 import UIKit
 import SnapKit
 
-final class SearchBookViewController: UIViewController {
+final class OpinionViewController: UIViewController {
     
     private lazy var label: UILabel = {
         let label = UILabel()
-        label.text = "책 제목을 \n입력해주세요"
+        label.text = "주제에 대한 의견을 \n입력해주세요"
         label.numberOfLines = 2
         label.font = UIFont(name: "Pretendard-Medium", size: 30)
         label.textColor = UIColor(named: "bt-black")
@@ -23,36 +25,30 @@ final class SearchBookViewController: UIViewController {
         return UIView(frame: CGRect(x: 0.0, y: 0.0, width: UIScreen.main.bounds.width, height: 72.0))
     }()
     
-    private lazy var titleTextField: UITextField = {
-        let textField = UITextField()
-        textField.attributedPlaceholder = NSAttributedString(string: "책 제목", attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
-        textField.font = UIFont(name: "Pretendard-Medium", size: 20)
-        textField.textColor = .black
-        textField.delegate = self
+    lazy var textView: UITextView = {
+        let textView = UITextView()
+        textView.font = .systemFont(ofSize: 15.0)
+        textView.text = "자유롭게 의견을 적어주세요" //이 문구가 입력을 시작하면 자동으로 사라지도록 -> textViewDelegate
+        textView.textColor = .secondaryLabel
+        textView.delegate = self
+        textView.layer.borderColor = UIColor.gray.cgColor
+        textView.layer.borderWidth = 1.0
+        textView.layer.cornerRadius = 5.0
         
-        textField.inputAccessoryView = accessoryView
-        textField.translatesAutoresizingMaskIntoConstraints = false
-        
-        return textField
-    }()
+        textView.inputAccessoryView = accessoryView
+        textView.translatesAutoresizingMaskIntoConstraints = false
 
-    
-    private lazy var underLineView: UIView = {
-        let lineView = UIView()
-        lineView.backgroundColor = UIColor(named: "bt-black")
-        lineView.heightAnchor.constraint(equalToConstant: 1).isActive = true
-        lineView.translatesAutoresizingMaskIntoConstraints = false
-        return lineView
+        return textView
     }()
     
     private lazy var searchButton: SquareButton = {
-        let button = SquareButton(title: "검색")
-        button.addTarget(self, action: #selector(goToChooseBook), for: .touchUpInside)
+        let button = SquareButton(title: "완료")
+        button.addTarget(self, action: #selector(goToMyDebate), for: .touchUpInside)
         return button
     }()
     
-    @objc func goToChooseBook() {
-        let vc = ChooseBookViewController()
+    @objc func goToMyDebate() {
+        let vc = DebateViewController()
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
@@ -81,13 +77,13 @@ final class SearchBookViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) { //화면이 전환되자마자
         super.viewWillAppear(animated)
         tabBarController?.tabBar.isHidden = true //탭바 숨기기
+        self.textView.becomeFirstResponder()
         
-        self.titleTextField.becomeFirstResponder()
     }
 
 }
 
-extension SearchBookViewController {
+extension OpinionViewController {
     func setupNavigationBar() {
         navigationController?.navigationBar.topItem?.title = ""
         let backButton = navigationController?.navigationBar.topItem?.backBarButtonItem
@@ -95,27 +91,21 @@ extension SearchBookViewController {
     }
 }
 
-extension SearchBookViewController {
+extension OpinionViewController {
     func setupLayout(){
-        [label,titleTextField,underLineView,searchButton].forEach{view.addSubview($0)}
+        [label,textView,searchButton].forEach{view.addSubview($0)}
         label.snp.makeConstraints{
             $0.top.equalTo(view.safeAreaLayoutGuide).inset(30)
             $0.leading.equalToSuperview().inset(20)
         }
         
-        titleTextField.snp.makeConstraints{
+        textView.snp.makeConstraints{
             $0.top.equalTo(label.snp.bottom).offset(30)
             $0.leading.equalToSuperview().inset(20)
             $0.trailing.equalToSuperview().inset(20)
-            $0.height.equalTo(40)
+            $0.height.equalTo(221)
         }
-        
-        underLineView.snp.makeConstraints{
-            $0.top.equalTo(titleTextField.snp.bottom).offset(5)
-            $0.leading.equalTo(titleTextField)
-            $0.trailing.equalTo(titleTextField)
-        }
-        
+
         searchButton.snp.makeConstraints{
             $0.bottom.equalTo(view.safeAreaLayoutGuide).inset(20)
             $0.centerX.equalTo(view.safeAreaLayoutGuide.snp.centerX)
@@ -129,19 +119,17 @@ extension SearchBookViewController {
     }
 }
 
-
-extension SearchBookViewController: UITextFieldDelegate {
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        //return 키 눌렀을 때 키보드 내리기
-        self.titleTextField.resignFirstResponder()
-        
-        //검색 -> 화면전환
-        let vc = ChooseBookViewController()
-        self.navigationController?.pushViewController(vc, animated: true)
-        
-        return true
+extension OpinionViewController: UITextViewDelegate {
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        guard textView.textColor == .secondaryLabel else {return}
+        textView.text = nil
+        textView.textColor = .label
     }
-
+    func textViewDidEndEditing(_ textView: UITextView) {
+        self.textView.resignFirstResponder()
+    }
+    
 }
+
 
 

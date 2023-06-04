@@ -10,13 +10,39 @@ import SnapKit
 
 final class DebateViewController: UIViewController {
     
+    private var config = UIButton.Configuration.filled()
+    
+    private lazy var addDebateButton: UIButton = {
+        let button = UIButton(type: .custom, primaryAction: UIAction(handler: { _ in
+            let vc = SearchDebateBookViewController()
+            self.navigationController?.pushViewController(vc, animated: true)
+        }))
+        button.configuration = config
+        button.configuration?.image = UIImage(systemName: "plus")
+        button.configuration?.baseForegroundColor = .black
+        button.configuration?.imagePlacement = .leading
+        button.configuration?.imagePadding = 12
+        button.configuration?.background.cornerRadius = 35
+        button.configuration?.baseBackgroundColor = UIColor(named: "bt-button")
+        
+        button.setTitle("토론방 추가", for: .normal)
+
+        
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.heightAnchor.constraint(equalToConstant: 54).isActive = true
+        button.widthAnchor.constraint(equalToConstant: 158).isActive = true
+       
+        return button
+    }()
+    
+    
     private let segmentedControl : UnderlineSegmentedControl = {
         let control = UnderlineSegmentedControl(items: ["내 토론", "탐색"])
         control.translatesAutoresizingMaskIntoConstraints = false
         return control
     }()
     
-    private let firstView: MyDebateView = {
+    let firstView: MyDebateView = {
         let view = MyDebateView()
         view.backgroundColor = UIColor(named: "bt-bgcolor")
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -53,6 +79,11 @@ final class DebateViewController: UIViewController {
      @objc private func didChangeValue(segment: UnderlineSegmentedControl) {
        self.shouldHideFirstView = segment.selectedSegmentIndex != 0
      }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tabBarController?.tabBar.isHidden = false
+    }
 
 }
 
@@ -81,7 +112,7 @@ private extension DebateViewController {
 
 private extension DebateViewController {
     func setupLayout() {
-        [segmentedControl,firstView,secondView].forEach{view.addSubview($0)}
+        [segmentedControl,firstView,secondView, addDebateButton].forEach{view.addSubview($0)}
         
         segmentedControl.snp.makeConstraints{
             $0.top.equalTo(view.safeAreaLayoutGuide)
@@ -100,6 +131,10 @@ private extension DebateViewController {
             $0.leading.equalTo(firstView)
             $0.trailing.equalTo(firstView)
             $0.bottom.equalTo(firstView)
+        }
+        addDebateButton.snp.makeConstraints{
+            $0.centerX.equalTo(view.safeAreaLayoutGuide.snp.centerX)
+            $0.bottom.equalTo(firstView).inset(20)
         }
     }
 }

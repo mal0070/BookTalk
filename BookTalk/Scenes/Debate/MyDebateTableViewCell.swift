@@ -9,9 +9,15 @@ import UIKit
 
 class MyDebateTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var bookTitleLabel: UILabel!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var contentLabel: UILabel!
+    @IBOutlet weak var newLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        //newLabel.isHidden = true
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

@@ -1,13 +1,14 @@
 //
-//  SearchBookViewController.swift
+//  SearchDebateBookViewController.swift
 //  BookTalk
 //
-//  Created by 이민아 on 2023/05/30.
+//  Created by 이민아 on 2023/06/04.
 //
+
 import UIKit
 import SnapKit
 
-final class SearchBookViewController: UIViewController {
+final class SearchDebateBookViewController: UIViewController {
     
     private lazy var label: UILabel = {
         let label = UILabel()
@@ -52,7 +53,7 @@ final class SearchBookViewController: UIViewController {
     }()
     
     @objc func goToChooseBook() {
-        let vc = ChooseBookViewController()
+        let vc = ChooseDebateBookViewController()
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
@@ -87,7 +88,7 @@ final class SearchBookViewController: UIViewController {
 
 }
 
-extension SearchBookViewController {
+extension SearchDebateBookViewController {
     func setupNavigationBar() {
         navigationController?.navigationBar.topItem?.title = ""
         let backButton = navigationController?.navigationBar.topItem?.backBarButtonItem
@@ -95,7 +96,7 @@ extension SearchBookViewController {
     }
 }
 
-extension SearchBookViewController {
+extension SearchDebateBookViewController {
     func setupLayout(){
         [label,titleTextField,underLineView,searchButton].forEach{view.addSubview($0)}
         label.snp.makeConstraints{
@@ -130,13 +131,13 @@ extension SearchBookViewController {
 }
 
 
-extension SearchBookViewController: UITextFieldDelegate {
+extension SearchDebateBookViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         //return 키 눌렀을 때 키보드 내리기
         self.titleTextField.resignFirstResponder()
         
         //검색 -> 화면전환
-        let vc = ChooseBookViewController()
+        let vc = ChooseDebateBookViewController()
         self.navigationController?.pushViewController(vc, animated: true)
         
         return true

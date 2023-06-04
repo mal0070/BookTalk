@@ -8,8 +8,10 @@
 import UIKit
 
 class MyDebateView: UIView {
+    let bookTitles = ["데미안", "채식주의자", "코스모스"]
+    let titles = ["데미안의 행동에 대해서...", "채식주의자에 대해 이야기해봐요", "코스모스를 읽고..."]
 
-    private lazy var tableView: UITableView = {
+    lazy var tableView: UITableView = {
         let tableView = UITableView()
         tableView.delegate = self
         tableView.dataSource = self
@@ -50,16 +52,23 @@ extension MyDebateView: UITableViewDelegate {
 
 extension MyDebateView: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return 3
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 102
+        return 110
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "DebateListCell", for: indexPath) as! MyDebateTableViewCell
         cell.backgroundColor = UIColor(named: "bt-bgcolor")
+        cell.bookTitleLabel.text = bookTitles[indexPath.row]
+        cell.titleLabel.text = titles[indexPath.row]
+        if indexPath.row == 0 {
+            cell.newLabel.isHidden = false
+        } else {
+            cell.newLabel.isHidden = true
+        }
         return cell
     }
     
