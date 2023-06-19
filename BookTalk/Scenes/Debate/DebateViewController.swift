@@ -92,7 +92,7 @@ private extension DebateViewController {
         let title = UILabel()
         title.text = "토론"
         title.textColor = .black
-        title.font = UIFont(name: "Pretendard-ExtraBold", size: 30)
+        title.font = UIFont(name: "Pretendard-ExtraBold", size: 33)
         title.sizeToFit()
         navigationItem.leftBarButtonItem = UIBarButtonItem(customView: title)
         

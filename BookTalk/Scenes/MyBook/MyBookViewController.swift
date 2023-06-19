@@ -14,7 +14,7 @@ final class MyBookViewController: UIViewController {
     private lazy var collectionView : UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
-        layout.minimumLineSpacing = 10
+        layout.minimumLineSpacing = 15
         layout.minimumInteritemSpacing = 15
         
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
@@ -56,7 +56,10 @@ final class MyBookViewController: UIViewController {
         setupNavigationBar()
         view.addSubview(collectionView)
         collectionView.snp.makeConstraints{
-            $0.edges.equalToSuperview().inset(20)
+            $0.top.equalTo(view.safeAreaLayoutGuide).inset(20)
+            $0.leading.equalToSuperview().inset(20)
+            $0.trailing.equalToSuperview().inset(20)
+            $0.bottom.equalToSuperview()
         }
         //fetchData()
         
@@ -72,24 +75,37 @@ final class MyBookViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         tabBarController?.tabBar.isHidden = false
+        navigationController?.navigationBar.isHidden = false
     }
 
 }
 
 private extension MyBookViewController {
     func setupNavigationBar(){
-        navigationItem.title = "내 도서"
-        navigationItem.largeTitleDisplayMode = .always
-        navigationController?.navigationBar.prefersLargeTitles = true //large
+        let title = UILabel()
+        title.text = "내 도서"
+        title.textColor = .black
+        title.font = UIFont(name: "Pretendard-ExtraBold", size: 33)
+        title.sizeToFit()
+        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: title)
         
-        var profileButtonConfig = UIButton.Configuration.plain()
-        profileButtonConfig.image = UIImage(systemName: "person.crop.circle.fill")
-        profileButtonConfig.baseForegroundColor = .gray
-        profileButtonConfig.preferredSymbolConfigurationForImage = UIImage.SymbolConfiguration(pointSize: 33)
-        profileButtonConfig.contentInsets = NSDirectionalEdgeInsets(top: 80, leading: 230, bottom: 0, trailing: 20)
-        let profileButton = UIButton(configuration: profileButtonConfig)
-        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: profileButton)
+        let profileButton = UIBarButtonItem(title: nil, image: UIImage(systemName: "person"), target: self, action: nil)
+        profileButton.tintColor = .black
+        let notifyButton = UIBarButtonItem(title: nil, image: UIImage(systemName: "bell.badge"), target: self, action: #selector(notify))
+        notifyButton.tintColor = .black
+        
+        navigationItem.rightBarButtonItems = [profileButton, notifyButton]
+        
     }
+    
+    @objc func notify(sender: UITapGestureRecognizer){
+        let vc = NotifyViewController()
+        vc.modalPresentationStyle = .fullScreen
+        vc.modalTransitionStyle = .coverVertical
+        
+        present(vc, animated: true)
+    }
+    
 }
 
 extension MyBookViewController: UICollectionViewDelegateFlowLayout {
